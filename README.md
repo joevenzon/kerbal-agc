@@ -32,6 +32,10 @@ Your program gets evaluated each computer tick. To carry state between ticks, de
 In Lisp, function arguments are evaluated prior to applying them to the function, except for some special cases like "if" and "lambda". If you are new to Lisp, I recommend The Structure and Interpretation of Computer Programs, a free ebook published by MIT:
 http://mitpress.mit.edu/sicp/
 
+Here's the comma separated list of built-in functions:
+
+if, quote, set!, define, initialize, lambda, begin, +, -, *, /, not, and, or, >, <, >=, <=, =, equal?, eq?, length, cons, car, cdr, append, list, list?, null?, symbol?, defined?, modulo, abs, floor, ceiling, min, max, apply, id, sqrt, let
+
 Interface functions
 
 Inside your programs you can use special functions to interface with your vessel. Note that the Staging functions only work when the vessel is active.
