@@ -1141,7 +1141,7 @@ namespace MicroLisp
 				else if (args[0] is LispList)
 				{
 					List <LispValue> defineArgList = (args[0] as LispList).list;
-					if (defineArgList.Count <= 1) throw new EvalException("if the first argument to define is a list, you must specify at least a function name and one argument");
+					if (defineArgList.Count < 1) throw new EvalException("if the first argument to define is a list, you must specify at least a function name and one argument");
 					if (defineArgList[0] is LispAtom) throw new EvalException("can't redefine built-in function: " + defineArgList[0].ToString());
 					if (!(defineArgList[0] is LispSymbol)) throw new EvalException("the define argument list must consist of symbols: " + defineArgList[0].ToString());
 
