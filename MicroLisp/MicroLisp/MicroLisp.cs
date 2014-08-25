@@ -65,7 +65,15 @@ namespace MicroLisp
 			"apply",
 			"id",
 			"sqrt",
-			"let"
+			"let",
+			"pow",
+			"ln",
+			"sin",
+			"cos",
+			"tan",
+			"asin",
+			"acos",
+			"atan2"
 		};
 
 		public enum Names
@@ -110,7 +118,15 @@ namespace MicroLisp
 			Apply,
 			ID,
 			Sqrt,
-			Let
+			Let,
+			Pow,
+			Ln,
+			Sin,
+			Cos,
+			Tan,
+			Asin,
+			Acos,
+			Atan2
 		};
 	}
 
@@ -1448,6 +1464,22 @@ namespace MicroLisp
 						throw new EvalException("let's first argument must be a list of symbol/expression pairs");
 					}
 				}
+			case Primitives.Names.Pow:
+				return NumericBinop(Math.Pow,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Ln:
+				return NumericUnary(Math.Log,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Sin:
+				return NumericUnary(Math.Sin,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Cos:
+				return NumericUnary(Math.Cos,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Tan:
+				return NumericUnary(Math.Tan,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Asin:
+				return NumericUnary(Math.Asin,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Acos:
+				return NumericUnary(Math.Acos,args,env,Primitives.names[a.primitiveIndex]);
+			case Primitives.Names.Atan2:
+				return NumericBinop(Math.Atan2,args,env,Primitives.names[a.primitiveIndex]);
 			default:
 				throw new EvalException("unimplemented primitive: " + Primitives.names[a.primitiveIndex]);
 			}

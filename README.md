@@ -68,6 +68,14 @@ Copy these folders to your KSP folder, merging them.
 - `id`
 - `sqrt`
 - `let`
+- `pow`
+- `ln`
+- `sin`
+- `cos`
+- `tan`
+- `asin`
+- `acos`
+- `atan2`
 
 ##Interface functions
 
